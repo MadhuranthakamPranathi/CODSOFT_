@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Harshitha | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 50px 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 2em;
+      color: #0077b6;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+
+    .skills ul, .projects ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .skills li, .projects li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: #e9ecef;
+      border-left: 5px solid #0077b6;
+    }
+
+    .project-title {
+      font-weight: bold;
+    }
+
+    .contact-info p {
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #343a40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Animations */
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Madhuranthakam.Pranathi</h1>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>Hello! I'm Pranathi, a passionate and detail-oriented web developer with a strong background in front-end and back-end technologies. I specialize in building interactive, user-friendly websites and applications.</p>
+  <p>I have a deep interest in UI/UX design, web accessibility, and performance optimization. My goal is to create digital experiences that are beautiful, functional, and fast.</p>
+</section>
+
+<section id="skills" class="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>HTML5, CSS3, JavaScript, TypeScript</li>
+    <li>React.js, Next.js, Vue.js</li>
+    <li>Node.js, Express.js, MongoDB, Firebase</li>
+    <li>Python, Django, Flask</li>
+    <li>Git, GitHub, CI/CD workflows</li>
+    <li>Figma, Adobe XD, Canva</li>
+    <li>Responsive Design & Cross-Browser Compatibility</li>
+    <li>REST APIs & GraphQL</li>
+  </ul>
+</section>
+
+<section id="projects" class="projects">
+  <h2>Projects</h2>
+  <ul>
+    <li>
+      <span class="project-title">Portfolio Website</span><br>
+      A fully responsive personal website built using HTML, CSS, and JavaScript with animated sections and theme switching.
+    </li>
+    <li>
+      <span class="project-title">Task Manager App</span><br>
+      A full-stack application for managing tasks with React on the frontend and Node.js on the backend.
+    </li>
+    <li>
+      <span class="project-title">E-commerce Store</span><br>
+      Developed a shopping site using React + Redux and integrated Stripe payments and Firebase Auth.
+    </li>
+    <li>
+      <span class="project-title">Blog Platform</span><br>
+      Created a personal blog platform with Django and PostgreSQL featuring markdown support and custom themes.
+    </li>
+  </ul>
+</section>
+
+<section id="contact" class="contact-info">
+  <h2>Contact Me</h2>
+  <p>Email: pranathi@gmail.com</p>
+  <p>Phone: +91 6303337431</p>
+  <p>Location: Vijayawada, India</p>
+  <p>LinkedIn: <a href="#" style="color: #0077b6;">linkedin.com/in/pranathi</a></p>
+  <p>GitHub: <a href="#" style="color: #0077b6;">github.com/pranathi</a></p>
+</section>
+
+<footer>
+  &copy; 2025 Pranathi. All rights reserved.
+</footer>
+
+<script>
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.15
+  });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
